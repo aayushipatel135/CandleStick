@@ -234,7 +234,7 @@ def update_output(value,data):
                         high_neg.append(df.iloc[last,5])
                         low_neg.append(df.iloc[last,6])
                         close_neg.append(df.iloc[last,7])
-                    elif df.iloc[0,9] > 0 : 
+                    elif df.iloc[last,9] > 0 : 
                         x_pos.append(df.iloc[last,-1])
                         open_pos.append(df.iloc[last,4])
                         high_pos.append(df.iloc[last,5])
@@ -313,7 +313,7 @@ def update_output(value,data):
                         high_neg.append(df.iloc[last,5])
                         low_neg.append(df.iloc[last,6])
                         close_neg.append(df.iloc[last,7])
-                    elif df.iloc[0,9] > 0 : 
+                    elif df.iloc[last,9] > 0 : 
                         x_pos.append(df.iloc[last,-1])
                         open_pos.append(df.iloc[last,4])
                         high_pos.append(df.iloc[last,5])
