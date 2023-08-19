@@ -78,6 +78,8 @@ app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div([
+    html.H1(children="Candle Stick Plot 2017"),
+           #style = {align : center}),
     daq.ToggleSwitch(
         id='my-toggle-switch',
         value=True
