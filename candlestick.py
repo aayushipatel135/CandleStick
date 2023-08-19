@@ -14,9 +14,10 @@ from flask import request
 
 df = pd.read_csv('final.csv')
 df['date'] = df['Date'] + " " +  df['Time'] + ":00+05:30"
-negative = df[df['Actions']<0].index.tolist()
-positive = df[df['Actions']>0].index.tolist()
-neutral = df[df['Actions']==0].index.tolist()
+df['Actions'] = df['Actions'].apply(lambda x : int(x[1:-1]))
+# negative = df[df['Actions']<0].index.tolist()
+# positive = df[df['Actions']>0].index.tolist()
+# neutral = df[df['Actions']==0].index.tolist()
 
 x_pos = []
 open_pos = []
