@@ -78,7 +78,7 @@ app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div([
-    # html.H1(children="Candle Stick Plot 2017",
+    html.H1(children="Candle Stick Plot 2017"),
     #        style = {'textAlign': 'center','color': 'black'}
     # ),
     daq.ToggleSwitch(
