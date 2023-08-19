@@ -88,8 +88,8 @@ app.layout = html.Div([
     html.Div(id='toggle-switch-output'),
 
     dcc.Graph(id='live-graph', 
-              # style={'height': '85vh'
-              #       },
+              style={'height': '85vh'
+                    },
               animate=False),
             dcc.Interval(
                 id='graph-update',
