@@ -14,6 +14,48 @@ from flask import request
 
 df = pd.read_csv('final.csv')
 df['date'] = df['Date'] + " " +  df['Time'] + ":00+05:30"
+negative = df[df['Actions']<0].index.tolist()
+positive = df[df['Actions']>0].index.tolist()
+neutral = df[df['Actions']==0].index.tolist()
+
+x_pos = []
+open_pos = []
+high_pos = []
+low_pos = []
+close_pos = []
+
+x_neg = []
+open_neg = []
+high_neg = []
+low_neg = []
+close_neg = []
+
+x_neu = []
+open_neu = []
+high_neu = []
+low_neu = []
+close_neu = []
+
+
+if df.iloc[0,9] < 0 :
+    x_neg.append(df.iloc[0,-1])
+    open_neg.append(df.iloc[0,4])
+    high_neg.append(df.iloc[0,5])
+    low_neg.append(df.iloc[0,6])
+    close_neg.append(df.iloc[0,7])
+elif df.iloc[0,9] > 0 : 
+    x_pos.append(df.iloc[0,-1])
+    open_pos.append(df.iloc[0,4])
+    high_pos.append(df.iloc[0,5])
+    low_pos.append(df.iloc[0,6])
+    close_pos.append(df.iloc[0,7])
+else : 
+    x_neu.append(df.iloc[0,-1])
+    open_neu.append(df.iloc[0,4])
+    high_neu.append(df.iloc[0,5])
+    low_neu.append(df.iloc[0,6])
+    close_neu.append(df.iloc[0,7])
+
 x = []
 x.append(df.iloc[0,-1])
 open = []
@@ -66,7 +108,7 @@ def update_output(value,data):
     if value==False:
         time_interval = 9999999999999900000
         time.sleep(60)
-        if last < 15 : 
+        if last < 15 :
             candle = plotly.graph_objs.Candlestick(
                     x = list(x),
                     low = list(low),
@@ -136,6 +178,25 @@ def update_output(value,data):
         time_interval = 1500
         if last < len(df) : 
                 if last < 15 : 
+                    
+                    if df.iloc[last,9] < 0 :
+                        x_neg.append(df.iloc[last,-1])
+                        open_neg.append(df.iloc[last,4])
+                        high_neg.append(df.iloc[last,5])
+                        low_neg.append(df.iloc[last,6])
+                        close_neg.append(df.iloc[last,7])
+                    elif df.iloc[0,9] > 0 : 
+                        x_pos.append(df.iloc[last,-1])
+                        open_pos.append(df.iloc[last,4])
+                        high_pos.append(df.iloc[last,5])
+                        low_pos.append(df.iloc[last,6])
+                        close_pos.append(df.iloc[last,7])
+                    else : 
+                        x_neu.append(df.iloc[last,-1])
+                        open_neu.append(df.iloc[last,4])
+                        high_neu.append(df.iloc[last,5])
+                        low_neu.append(df.iloc[last,6])
+                        close_neu.append(df.iloc[last,7])
                     x.append(df.iloc[last,-1])
                     open.append(df.iloc[last,4])
                     high.append(df.iloc[last,5])
@@ -176,6 +237,24 @@ def update_output(value,data):
                             
                             )
                 else : 
+                    if df.iloc[last,9] < 0 :
+                        x_neg.append(df.iloc[last,-1])
+                        open_neg.append(df.iloc[last,4])
+                        high_neg.append(df.iloc[last,5])
+                        low_neg.append(df.iloc[last,6])
+                        close_neg.append(df.iloc[last,7])
+                    elif df.iloc[0,9] > 0 : 
+                        x_pos.append(df.iloc[last,-1])
+                        open_pos.append(df.iloc[last,4])
+                        high_pos.append(df.iloc[last,5])
+                        low_pos.append(df.iloc[last,6])
+                        close_pos.append(df.iloc[last,7])
+                    else : 
+                        x_neu.append(df.iloc[last,-1])
+                        open_neu.append(df.iloc[last,4])
+                        high_neu.append(df.iloc[last,5])
+                        low_neu.append(df.iloc[last,6])
+                        close_neu.append(df.iloc[last,7])
                     x.append(df.iloc[last,-1])
                     open.append(df.iloc[last,4])
                     high.append(df.iloc[last,5])
