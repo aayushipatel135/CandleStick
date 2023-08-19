@@ -79,7 +79,7 @@ server = app.server
 
 app.layout = html.Div([
     html.H1(children="Candle Stick Plot 2017",
-           style = {'textAlign': 'center','color': black}
+           style = {'textAlign': 'center','color': 'black'}
     ),
     daq.ToggleSwitch(
         id='my-toggle-switch',
