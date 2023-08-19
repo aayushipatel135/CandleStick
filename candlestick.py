@@ -12,17 +12,18 @@ import dash_daq as daq
 from flask import request
 
 
-df = pd.read_csv('working.csv')
+df = pd.read_csv('final.csv')
+df['date'] = df['Date'] + " " +  df['Time'] + ":00+05:30"
 x = []
-x.append(df.iloc[0,0])
+x.append(df.iloc[0,-1])
 open = []
 open.append(df.iloc[0,4])
 high = []
-high.append(df.iloc[0,2])
+high.append(df.iloc[0,5])
 low = []
-low.append(df.iloc[0,3])
+low.append(df.iloc[0,6])
 close = []
-close.append(df.iloc[0,1])
+close.append(df.iloc[0,7])
 last = 0
 
 
@@ -135,11 +136,11 @@ def update_output(value,data):
         time_interval = 1500
         if last < len(df) : 
                 if last < 15 : 
-                    x.append(df.iloc[last,0])
+                    x.append(df.iloc[last,-1])
                     open.append(df.iloc[last,4])
-                    high.append(df.iloc[last,2])
-                    low.append(df.iloc[last,3])
-                    close.append(df.iloc[last,1])
+                    high.append(df.iloc[last,5])
+                    low.append(df.iloc[last,6])
+                    close.append(df.iloc[last,7])
             
                     candle = plotly.graph_objs.Candlestick(x = list(x),
                             low = list(low),
@@ -175,11 +176,11 @@ def update_output(value,data):
                             
                             )
                 else : 
-                    x.append(df.iloc[last,0])
+                    x.append(df.iloc[last,-1])
                     open.append(df.iloc[last,4])
-                    high.append(df.iloc[last,2])
-                    low.append(df.iloc[last,3])
-                    close.append(df.iloc[last,1])
+                    high.append(df.iloc[last,5])
+                    low.append(df.iloc[last,6])
+                    close.append(df.iloc[last,7])
             
                     candle = plotly.graph_objs.Candlestick(
                             x = list(x),
