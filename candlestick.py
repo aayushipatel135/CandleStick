@@ -106,8 +106,8 @@ def update_output(value,data):
     global time_interval
 
 
-    string1 = 'The switch is off'
-    string2 = 'This is working'
+    string1 = ''
+    string2 = ''
 
     if value==False:
         time_interval = 9999999999999900000
@@ -157,7 +157,7 @@ def update_output(value,data):
             )
             print(x[-1],x[-1])
             return (string1,
-                    {'data': [candle_pos,candle_neg,candle,scatter],
+                    {'data': [candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                         xaxis = dict(
                                         autorange=False,
@@ -211,7 +211,7 @@ def update_output(value,data):
             )
             print(x[-1],x[-1])
             return (string1,
-                    {'data': [candle_pos,candle_neg,candle,scatter],
+                    {'data': [candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                         xaxis = dict(
                                         autorange=False,
@@ -293,7 +293,7 @@ def update_output(value,data):
                     last = last + 1
                     print(x[0] ,x[-1])
                     return (string2, 
-                            {'data': [candle_pos,candle_neg,candle,scatter],
+                            {'data': [candle,candle_pos,candle_neg,scatter],
                             'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                 xaxis = dict(
                                                     autorange=False,
@@ -373,7 +373,7 @@ def update_output(value,data):
                     last = last + 1
                     print(x[-15],x[-1])
                     return (string2,
-                            {'data': [candle_pos,candle_neg,candle,scatter],
+                            {'data': [candle,candle_pos,candle_neg,scatter],
                             'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                 xaxis = dict(
                                                     autorange=False,
@@ -429,7 +429,7 @@ def update_output(value,data):
             print(x[-15],x[-1])
             time.sleep(60)
             return (string2,
-                    {'data': [candle_pos,candle_neg,candle,scatter],
+                    {'data': [candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                 xaxis = dict(autorange=False,
                                             range = [x[-15] , x[-1] ],
