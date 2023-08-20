@@ -99,8 +99,8 @@ app.layout = html.Div([
     ),
     html.Div(id='toggle-switch-output'),
 
-    dcc.Graph(id='live-table', 
-              animate=False),
+    # dcc.Graph(id='live-table', 
+    #           animate=False),
 
     dcc.Graph(id='live-graph', 
               style={'height': '85vh'
@@ -115,7 +115,7 @@ app.layout = html.Div([
 
 @app.callback(
     [Output('toggle-switch-output', 'children'),
-     Output('live-table', 'figure'),
+     #Output('live-table', 'figure'),
      Output('live-graph', 'figure')],
     [Input('my-toggle-switch', 'value'),
      Input('graph-update', 'n_intervals')])
@@ -124,13 +124,13 @@ def update_output(value,data):
     global last
     global time_interval
 
-    print(df.iloc[0,13])
-    string1 = ''
-    string2 = ''
-    data_table =[go.Table(
-                    header=dict(values=['Month', 'Return']),
-                    cells=dict(values=[ return_x[-1] ,  return_y[-1] ] ) 
-            )]
+    # print(df.iloc[0,13])
+    # string1 = ''
+    # string2 = ''
+    # data_table =[go.Table(
+    #                 header=dict(values=['Month', 'Return']),
+    #                 cells=dict(values=[ return_x[-1] ,  return_y[-1] ] ) 
+    #         )]
 
     if value==False:
         time_interval = 9999999999999900000
@@ -187,7 +187,7 @@ def update_output(value,data):
                 mode= 'lines+markers'
             )
             print(x[-1],x[-1])
-            return (string1,{ 'data' : data_table },
+            return (string1,#{ 'data' : data_table },
                     {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                         xaxis = dict(
@@ -250,7 +250,7 @@ def update_output(value,data):
             )
             print(x[-1],x[-1])
             if last < 52 : 
-                return (string1,{ 'data' : data_table },
+                return (string1,#{ 'data' : data_table },
                         {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
@@ -261,7 +261,7 @@ def update_output(value,data):
                         )}
                        )
             else : 
-                return (string1,{ 'data' : data_table },
+                return (string1,#{ 'data' : data_table },
                         {'data': [candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
@@ -365,7 +365,7 @@ def update_output(value,data):
                     )
                     last = last + 1
                     print(x[0] ,x[-1])
-                    return (string2,{ 'data' : data_table },
+                    return (string2,#{ 'data' : data_table },
                             {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                             'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                 xaxis = dict(
@@ -459,7 +459,7 @@ def update_output(value,data):
                     last = last + 1
                     print(x[-15],x[-1])
                     if last < 52 : 
-                        return (string2,{ 'data' : data_table },
+                        return (string2,#{ 'data' : data_table },
                                 {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                                 'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                     xaxis = dict(
@@ -471,7 +471,7 @@ def update_output(value,data):
                                 
                                )
                     else :
-                        return (string1,{ 'data' : data_table },
+                        return (string1,#{ 'data' : data_table },
                         {'data': [candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
@@ -534,7 +534,7 @@ def update_output(value,data):
             )
             print(x[-15],x[-1])
             time.sleep(60)
-            return (string2,{ 'data' : data_table },
+            return (string2,#{ 'data' : data_table },
                     {'data': [candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                 xaxis = dict(autorange=False,
