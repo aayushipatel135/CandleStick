@@ -127,7 +127,7 @@ def update_output(value,data):
     print(df.iloc[0,13])
     string1 = ''
     string2 = ''
-    { 'data' : data_table }=[go.Table(
+    data_table =[go.Table(
                     header=dict(values=['Month', 'Return']),
                     cells=dict(values=[ return_x[-1] ,  return_y[-1] ] ) 
             )]
@@ -279,7 +279,7 @@ def update_output(value,data):
             y = ((final_balance - initial_balance) / initial_balance) * 100
             return_x.append(temp[5:7])
             return_y.append(y)
-            { 'data' : data_table }=[go.Table(
+            data_table=[go.Table(
                     header=dict(values=['Month', 'Return']),
                     cells=dict(values=[ return_x[-1] ,  return_y[-1] ] ) 
             )]
