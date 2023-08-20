@@ -275,7 +275,7 @@ def update_output(value,data):
                     high.append(df.iloc[last,5])
                     low.append(df.iloc[last,6])
                     close.append(df.iloc[last,7])
-                    display.append([df.iloc[last,-1],df.iloc[last,4],df.iloc[last,5],df.iloc[last,6],df.iloc[last,7],,df.iloc[last,9]])
+                    display.append([df.iloc[last,-1],df.iloc[last,4],df.iloc[last,5],df.iloc[last,6],df.iloc[last,7],df.iloc[last,9]])
             
                     candle = plotly.graph_objs.Candlestick(x = list(x),
                             low = list(low),
@@ -361,7 +361,7 @@ def update_output(value,data):
                     high.append(df.iloc[last,5])
                     low.append(df.iloc[last,6])
                     close.append(df.iloc[last,7])
-                    display.append([df.iloc[last,-1],df.iloc[last,4],df.iloc[last,5],df.iloc[last,6],df.iloc[last,7],,df.iloc[last,9]])
+                    display.append([df.iloc[last,-1],df.iloc[last,4],df.iloc[last,5],df.iloc[last,6],df.iloc[last,7],df.iloc[last,9]])
                     
                     candle = plotly.graph_objs.Candlestick(
                             x = list(x),
