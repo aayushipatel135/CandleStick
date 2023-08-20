@@ -127,7 +127,7 @@ def update_output(value,data):
                     decreasing_line_color = 'red',
                     name='candles',
                     text=display,
-                    hoverinfo="display"
+                    # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -187,7 +187,7 @@ def update_output(value,data):
                     decreasing_line_color = 'red',
                     name='candles',
                     text =display,
-                    hoverinfo="display"
+                    # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -287,7 +287,7 @@ def update_output(value,data):
                             decreasing_line_color = 'red',
                             name='candles',
                             text=display,
-                            hoverinfo="display"
+                            # hoverinfo="display"
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
                             x = list(x_pos),
@@ -375,7 +375,7 @@ def update_output(value,data):
                             decreasing_line_color = 'red',
                             name='candles',
                             text=display,
-                            hoverinfo="display"
+                            # hoverinfo="display"
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
                             x = list(x_pos),
@@ -449,7 +449,7 @@ def update_output(value,data):
                             decreasing_line_color = 'red',
                             name='candles',
                             text=display,
-                            hoverinfo="display"
+                            # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
