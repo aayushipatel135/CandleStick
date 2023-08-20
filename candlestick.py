@@ -113,7 +113,7 @@ def update_output(value,data):
     if value==False:
         time_interval = 9999999999999900000
         time.sleep(60)
-        if last < 15 :
+        if last < 30 :
             candle = plotly.graph_objs.Candlestick(
                     x = list(x),
                     low = list(low),
@@ -225,7 +225,7 @@ def update_output(value,data):
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
                                             autorange=False,
-                                            range = [x[-15] , x[-1] ],
+                                            range = [x[-30] , x[-1] ],
                                             type='date'),
                                             yaxis = dict(range = [min(low),max(high)]),
                         )}
@@ -236,7 +236,7 @@ def update_output(value,data):
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
                                             autorange=False,
-                                            range = [x[-15] , x[-1] ],
+                                            range = [x[-30] , x[-1] ],
                                             type='date'),
                                             yaxis = dict(range = [min(low),max(high)]),
                         )}
@@ -244,7 +244,7 @@ def update_output(value,data):
     else:
         time_interval = 1500
         if last < len(df) : 
-                if last < 15 : 
+                if last < 30 : 
                     
                     if df.iloc[last,9] < 0 :
                         x_neg.append(df.iloc[last,-1])
@@ -407,7 +407,7 @@ def update_output(value,data):
                                 'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                     xaxis = dict(
                                                         autorange=False,
-                                                        range = [x[-15] , x[-1] ],
+                                                        range = [x[-30] , x[-1] ],
                                                         type='date'),
                                                     yaxis = dict(range = [min(low),max(high)]),
                                                     ) },
@@ -419,7 +419,7 @@ def update_output(value,data):
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
                                             autorange=False,
-                                            range = [x[-15] , x[-1] ],
+                                            range = [x[-30] , x[-1] ],
                                             type='date'),
                                             yaxis = dict(range = [min(low),max(high)]),
                         )}
@@ -477,7 +477,7 @@ def update_output(value,data):
                     {'data': [candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                 xaxis = dict(autorange=False,
-                                            range = [x[-15] , x[-1] ],
+                                            range = [x[-30] , x[-1] ],
                                             type='date'),
                                             yaxis = dict(range = [min(low),max(high)]),
                     )}
