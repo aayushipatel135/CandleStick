@@ -124,7 +124,7 @@ def update_output(value,data):
     global last
     global time_interval
 
-    print(df.iloc[0,14])
+    print(df.iloc[0,13])
     string1 = ''
     string2 = ''
     data_table=[go.Table(
@@ -273,7 +273,7 @@ def update_output(value,data):
                        )
     else:
         time_interval = 1500
-        if df.iloc[last,14] == True : 
+        if df.iloc[last,13] == True : 
             temp = df.iloc[0,2]
             final_balance = df.iloc[last,8]
             y = ((final_balance - initial_balance) / initial_balance) * 100
