@@ -120,7 +120,8 @@ def update_output(value,data):
                     close = list(close),
                     open = list(open),
                     increasing_line_color = 'green',
-                    decreasing_line_color = 'red'
+                    decreasing_line_color = 'red',
+                    name='normal_graph',
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -129,7 +130,8 @@ def update_output(value,data):
                     close = list(close_pos),
                     open = list(open_pos),
                     increasing_line_color = 'blue',
-                    decreasing_line_color = 'blue'
+                    decreasing_line_color = 'blue',
+                    name='normal_graph',
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -138,7 +140,8 @@ def update_output(value,data):
                     close = list(close_neg),
                     open = list(open_neg),
                     increasing_line_color = 'yellow',
-                    decreasing_line_color = 'yellow'
+                    decreasing_line_color = 'yellow',
+                    name='normal_graph',
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list(x_neu),
@@ -147,12 +150,13 @@ def update_output(value,data):
                     close = list(close_neu),
                     open = list(open_neu),
                     increasing_line_color = 'black',
-                    decreasing_line_color = 'black'
+                    decreasing_line_color = 'black',
+                    name='normal_graph',
             )
             scatter = plotly.graph_objs.Scatter(
                 x=list(x),
                 y=list(open),
-                name='Scatter',
+                name='normal_graph',
                 mode= 'lines+markers'
             )
             print(x[-1],x[-1])
@@ -174,7 +178,8 @@ def update_output(value,data):
                     close = list(close),
                     open = list(open),
                     increasing_line_color = 'green',
-                    decreasing_line_color = 'red'
+                    decreasing_line_color = 'red',
+                    name='normal_graph',
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -183,7 +188,8 @@ def update_output(value,data):
                     close = list(close_pos),
                     open = list(open_pos),
                     increasing_line_color = 'blue',
-                    decreasing_line_color = 'blue'
+                    decreasing_line_color = 'blue',
+                    name='normal_graph',
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -192,7 +198,8 @@ def update_output(value,data):
                     close = list(close_neg),
                     open = list(open_neg),
                     increasing_line_color = 'yellow',
-                    decreasing_line_color = 'yellow'
+                    decreasing_line_color = 'yellow',
+                    name='normal_graph',
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list(x_neu),
@@ -201,7 +208,8 @@ def update_output(value,data):
                     close = list(close_neu),
                     open = list(open_neu),
                     increasing_line_color = 'black',
-                    decreasing_line_color = 'black'
+                    decreasing_line_color = 'black',
+                    name='normal_graph',
             )
             scatter = plotly.graph_objs.Scatter(
                 x=list(x),
@@ -255,7 +263,8 @@ def update_output(value,data):
                             close = list(close),
                             open = list(open),
                             increasing_line_color = 'green',
-                            decreasing_line_color = 'red'
+                            decreasing_line_color = 'red',
+                            name='normal_graph',
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
                             x = list(x_pos),
@@ -264,7 +273,8 @@ def update_output(value,data):
                             close = list(close_pos),
                             open = list(open_pos),
                             increasing_line_color = 'blue',
-                            decreasing_line_color = 'blue'
+                            decreasing_line_color = 'blue',
+                            name='normal_graph',
                     )
                     candle_neg = plotly.graph_objs.Candlestick(
                             x = list(x_neg),
@@ -273,7 +283,8 @@ def update_output(value,data):
                             close = list(close_neg),
                             open = list(open_neg),
                             increasing_line_color = 'yellow',
-                            decreasing_line_color = 'yellow'
+                            decreasing_line_color = 'yellow',
+                            name='normal_graph',
                     )
                     candle_neu = plotly.graph_objs.Candlestick(
                             x = list(x_neu),
@@ -282,7 +293,8 @@ def update_output(value,data):
                             close = list(close_neu),
                             open = list(open_neu),
                             increasing_line_color = 'black',
-                            decreasing_line_color = 'black'
+                            decreasing_line_color = 'black',
+                            name='normal_graph',
                     )
                     scatter = plotly.graph_objs.Scatter(
                         x=list(x),
@@ -335,7 +347,8 @@ def update_output(value,data):
                             close = list(close),
                             open = list(open),
                             increasing_line_color = 'green',
-                            decreasing_line_color = 'red'
+                            decreasing_line_color = 'red',
+                            name='normal_graph',
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
                             x = list(x_pos),
@@ -344,7 +357,8 @@ def update_output(value,data):
                             close = list(close_pos),
                             open = list(open_pos),
                             increasing_line_color = 'blue',
-                            decreasing_line_color = 'blue'
+                            decreasing_line_color = 'blue',
+                            name='normal_graph',
                     )
                     candle_neg = plotly.graph_objs.Candlestick(
                             x = list(x_neg),
@@ -353,7 +367,8 @@ def update_output(value,data):
                             close = list(close_neg),
                             open = list(open_neg),
                             increasing_line_color = 'yellow',
-                            decreasing_line_color = 'yellow'
+                            decreasing_line_color = 'yellow',
+                            name='normal_graph',
                     )
                     candle_neu = plotly.graph_objs.Candlestick(
                             x = list(x_neu),
@@ -362,7 +377,8 @@ def update_output(value,data):
                             close = list(close_neu),
                             open = list(open_neu),
                             increasing_line_color = 'black',
-                            decreasing_line_color = 'black'
+                            decreasing_line_color = 'black',
+                            name='normal_graph',
                     )
                     scatter = plotly.graph_objs.Scatter(
                         x=list(x),
@@ -391,7 +407,8 @@ def update_output(value,data):
                             close = list(close),
                             open = list(open),
                             increasing_line_color = 'green',
-                            decreasing_line_color = 'red'
+                            decreasing_line_color = 'red',
+                            name='normal_graph',
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -400,7 +417,8 @@ def update_output(value,data):
                     close = list(close_pos),
                     open = list(open_pos),
                     increasing_line_color = 'blue',
-                    decreasing_line_color = 'blue'
+                    decreasing_line_color = 'blue',
+                    name='normal_graph',
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -409,7 +427,8 @@ def update_output(value,data):
                     close = list(close_neg),
                     open = list(open_neg),
                     increasing_line_color = 'yellow',
-                    decreasing_line_color = 'yellow'
+                    decreasing_line_color = 'yellow',
+                    name='normal_graph',
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list(x_neu),
@@ -418,7 +437,8 @@ def update_output(value,data):
                     close = list(close_neu),
                     open = list(open_neu),
                     increasing_line_color = 'black',
-                    decreasing_line_color = 'black'
+                    decreasing_line_color = 'black',
+                    name='normal_graph',
             )
             scatter = plotly.graph_objs.Scatter(
                     x=list(x),
