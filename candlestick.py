@@ -219,16 +219,28 @@ def update_output(value,data):
                 mode= 'lines+markers'
             )
             print(x[-1],x[-1])
-            return (string1,
-                    {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
-                    'layout' : go.Layout(xaxis_rangeslider_visible=True,
-                                        xaxis = dict(
-                                        autorange=False,
-                                        range = [x[-15] , x[-1] ],
-                                        type='date'),
-                                        yaxis = dict(range = [min(low),max(high)]),
-                    )}
-                   )
+            if last < 52 : 
+                return (string1,
+                        {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
+                        'layout' : go.Layout(xaxis_rangeslider_visible=True,
+                                            xaxis = dict(
+                                            autorange=False,
+                                            range = [x[-15] , x[-1] ],
+                                            type='date'),
+                                            yaxis = dict(range = [min(low),max(high)]),
+                        )}
+                       )
+            else : 
+                return (string1,
+                        {'data': [candle,candle_pos,candle_neg,scatter],
+                        'layout' : go.Layout(xaxis_rangeslider_visible=True,
+                                            xaxis = dict(
+                                            autorange=False,
+                                            range = [x[-15] , x[-1] ],
+                                            type='date'),
+                                            yaxis = dict(range = [min(low),max(high)]),
+                        )}
+                       )
     else:
         time_interval = 1500
         if last < len(df) : 
@@ -389,17 +401,29 @@ def update_output(value,data):
                     )
                     last = last + 1
                     print(x[-15],x[-1])
-                    return (string2,
-                            {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
-                            'layout' : go.Layout(xaxis_rangeslider_visible=True,
-                                                xaxis = dict(
-                                                    autorange=False,
-                                                    range = [x[-15] , x[-1] ],
-                                                    type='date'),
-                                                yaxis = dict(range = [min(low),max(high)]),
-                                                ) },
-                            
-                           )
+                    if last < 52 : 
+                        return (string2,
+                                {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
+                                'layout' : go.Layout(xaxis_rangeslider_visible=True,
+                                                    xaxis = dict(
+                                                        autorange=False,
+                                                        range = [x[-15] , x[-1] ],
+                                                        type='date'),
+                                                    yaxis = dict(range = [min(low),max(high)]),
+                                                    ) },
+                                
+                               )
+                    else :
+                        return (string1,
+                        {'data': [candle,candle_pos,candle_neg,scatter],
+                        'layout' : go.Layout(xaxis_rangeslider_visible=True,
+                                            xaxis = dict(
+                                            autorange=False,
+                                            range = [x[-15] , x[-1] ],
+                                            type='date'),
+                                            yaxis = dict(range = [min(low),max(high)]),
+                        )}
+                       )
         else : 
             candle = plotly.graph_objs.Candlestick(
                             x = list(x),
@@ -450,7 +474,7 @@ def update_output(value,data):
             print(x[-15],x[-1])
             time.sleep(60)
             return (string2,
-                    {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
+                    {'data': [candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                 xaxis = dict(autorange=False,
                                             range = [x[-15] , x[-1] ],
