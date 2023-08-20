@@ -76,7 +76,7 @@ app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div([
-    html.H1(children="Candle Stick Plot 2017",
+    html.H1(children="Candle Stick Plot 2018",
            style = {'textAlign': 'center','color': 'black'}
     ),
     daq.ToggleSwitch(
@@ -91,7 +91,7 @@ app.layout = html.Div([
               animate=False),
             dcc.Interval(
                 id='graph-update',
-                interval=1000
+                interval=700
             ),
 
 ])
