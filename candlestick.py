@@ -129,8 +129,8 @@ def update_output(value,data):
         )])
         fig.update_layout(
             autosize=False,
-            width=80,
-            height=40
+            width=800,
+            height=400
         )
         time_interval = 9999999999999900000
         time.sleep(60)
@@ -279,8 +279,8 @@ def update_output(value,data):
         )])
         fig.update_layout(
             autosize=False,
-            width=80,
-            height=40
+            width=800,
+            height=400
         )
         if last < len(df) : 
                 if last < 30 : 
