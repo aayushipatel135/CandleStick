@@ -145,14 +145,14 @@ def update_output(value,data):
                     name='buying candle',
             )
             candle_neu = plotly.graph_objs.Candlestick(
-                    x = list(x_neu),
-                    low = list(low_neu),
-                    high = list(high_neu),
-                    close = list(close_neu),
-                    open = list(open_neu),
-                    increasing_line_color = 'black',
-                    decreasing_line_color = 'black',
-                    name='normal_graph',
+                    x = list([x[0]]),
+                    low = list([low[0]]),
+                    high = list([high[0]]),
+                    close = list([close[0]]),
+                    open = list([open[0]]),
+                    increasing_line_color = 'blue',
+                    decreasing_line_color = 'blue',
+                    name='buying candle',
             )
             scatter = plotly.graph_objs.Scatter(
                 x=list(x),
@@ -162,7 +162,7 @@ def update_output(value,data):
             )
             print(x[-1],x[-1])
             return (string1,
-                    {'data': [candle,candle_pos,candle_neg,scatter],
+                    {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                         xaxis = dict(
                                         autorange=False,
@@ -203,14 +203,14 @@ def update_output(value,data):
                     name='buying candle',
             )
             candle_neu = plotly.graph_objs.Candlestick(
-                    x = list(x_neu),
-                    low = list(low_neu),
-                    high = list(high_neu),
-                    close = list(close_neu),
-                    open = list(open_neu),
-                    increasing_line_color = 'black',
-                    decreasing_line_color = 'black',
-                    name='normal_graph',
+                    x = list([x[0]]),
+                    low = list([low[0]]),
+                    high = list([high[0]]),
+                    close = list([close[0]]),
+                    open = list([open[0]]),
+                    increasing_line_color = 'blue',
+                    decreasing_line_color = 'blue',
+                    name='buying candle',
             )
             scatter = plotly.graph_objs.Scatter(
                 x=list(x),
@@ -220,7 +220,7 @@ def update_output(value,data):
             )
             print(x[-1],x[-1])
             return (string1,
-                    {'data': [candle,candle_pos,candle_neg,scatter],
+                    {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                         xaxis = dict(
                                         autorange=False,
@@ -288,14 +288,14 @@ def update_output(value,data):
                             name='buying candle',
                     )
                     candle_neu = plotly.graph_objs.Candlestick(
-                            x = list(x_neu),
-                            low = list(low_neu),
-                            high = list(high_neu),
-                            close = list(close_neu),
-                            open = list(open_neu),
-                            increasing_line_color = 'black',
-                            decreasing_line_color = 'black',
-                            name='normal_graph',
+                            x = list([x[0]]),
+                            low = list([low[0]]),
+                            high = list([high[0]]),
+                            close = list([close[0]]),
+                            open = list([open[0]]),
+                            increasing_line_color = 'blue',
+                            decreasing_line_color = 'blue',
+                            name='buying candle',
                     )
                     scatter = plotly.graph_objs.Scatter(
                         x=list(x),
@@ -306,7 +306,7 @@ def update_output(value,data):
                     last = last + 1
                     print(x[0] ,x[-1])
                     return (string2, 
-                            {'data': [candle,candle_pos,candle_neg,scatter],
+                            {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                             'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                 xaxis = dict(
                                                     autorange=False,
@@ -372,14 +372,14 @@ def update_output(value,data):
                             name='buying candle',
                     )
                     candle_neu = plotly.graph_objs.Candlestick(
-                            x = list(x_neu),
-                            low = list(low_neu),
-                            high = list(high_neu),
-                            close = list(close_neu),
-                            open = list(open_neu),
-                            increasing_line_color = 'black',
-                            decreasing_line_color = 'black',
-                            name='normal_graph',
+                            x = list([x[0]]),
+                            low = list([low[0]]),
+                            high = list([high[0]]),
+                            close = list([close[0]]),
+                            open = list([open[0]]),
+                            increasing_line_color = 'blue',
+                            decreasing_line_color = 'blue',
+                            name='buying candle',
                     )
                     scatter = plotly.graph_objs.Scatter(
                         x=list(x),
@@ -390,7 +390,7 @@ def update_output(value,data):
                     last = last + 1
                     print(x[-15],x[-1])
                     return (string2,
-                            {'data': [candle,candle_pos,candle_neg,scatter],
+                            {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                             'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                 xaxis = dict(
                                                     autorange=False,
@@ -432,14 +432,14 @@ def update_output(value,data):
                     name='buying candle',
             )
             candle_neu = plotly.graph_objs.Candlestick(
-                    x = list(x_neu),
-                    low = list(low_neu),
-                    high = list(high_neu),
-                    close = list(close_neu),
-                    open = list(open_neu),
-                    increasing_line_color = 'black',
-                    decreasing_line_color = 'black',
-                    name='normal_graph',
+                    x = list([x[0]]),
+                    low = list([low[0]]),
+                    high = list([high[0]]),
+                    close = list([close[0]]),
+                    open = list([open[0]]),
+                    increasing_line_color = 'blue',
+                    decreasing_line_color = 'blue',
+                    name='buying candle',
             )
             scatter = plotly.graph_objs.Scatter(
                     x=list(x),
@@ -450,7 +450,7 @@ def update_output(value,data):
             print(x[-15],x[-1])
             time.sleep(60)
             return (string2,
-                    {'data': [candle,candle_pos,candle_neg,scatter],
+                    {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                 xaxis = dict(autorange=False,
                                             range = [x[-15] , x[-1] ],
