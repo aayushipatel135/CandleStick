@@ -125,8 +125,8 @@ def update_output(value,data):
                     increasing_line_color = 'green',
                     decreasing_line_color = 'red',
                     name='candles',
-                    text=display,
-                    hoverinfo="display"
+                    # text=display,
+                    # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -185,8 +185,8 @@ def update_output(value,data):
                     increasing_line_color = 'green',
                     decreasing_line_color = 'red',
                     name='candles',
-                    text =display,
-                    hoverinfo="display"
+                    # text =display,
+                    # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -251,7 +251,7 @@ def update_output(value,data):
         time_interval = 1500
         if last < len(df) : 
                 if last < 30 : 
-                    
+                    print(display[last])
                     if df.iloc[last,9] < 0 :
                         x_neg.append(df.iloc[last,-1])
                         open_neg.append(df.iloc[last,4])
@@ -285,8 +285,8 @@ def update_output(value,data):
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
                             name='candles',
-                            text=display,
-                            hoverinfo="display"
+                            # text=display,
+                            # hoverinfo="display"
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
                             x = list(x_pos),
@@ -338,6 +338,7 @@ def update_output(value,data):
                             
                             )
                 else : 
+                    print(display[last])
                     if df.iloc[last,9] < 0 :
                         x_neg.append(df.iloc[last,-1])
                         open_neg.append(df.iloc[last,4])
@@ -372,8 +373,8 @@ def update_output(value,data):
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
                             name='candles',
-                            text=display,
-                            hoverinfo="display"
+                            # text=display,
+                            # hoverinfo="display"
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
                             x = list(x_pos),
@@ -446,8 +447,8 @@ def update_output(value,data):
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
                             name='candles',
-                            text=display,
-                            hoverinfo="display"
+                            # text=display,
+                            # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
