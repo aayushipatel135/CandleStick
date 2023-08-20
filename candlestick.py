@@ -13,6 +13,7 @@ from flask import request
 
 
 df = pd.read_csv('final.csv')
+df = df.iloc[88992:,:]
 df['date'] = df['Date'] + " " +  df['Time'] + ":00+05:30"
 df['Actions'] = df['Actions'].apply(lambda x : int(x[1:-1]))
 
