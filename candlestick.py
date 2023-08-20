@@ -45,14 +45,14 @@ if df.iloc[0,9] < 0 :
     high_neg.append(df.iloc[0,5])
     low_neg.append(df.iloc[0,6])
     close_neg.append(df.iloc[0,7])
-    display_neg.append("Action : " +  str(df.iloc[0,9]) )
+    display_neg.append("No. of lots : " +  str(df.iloc[0,9]) )
 elif df.iloc[0,9] > 0 : 
     x_pos.append(df.iloc[0,12])
     open_pos.append(df.iloc[0,4])
     high_pos.append(df.iloc[0,5])
     low_pos.append(df.iloc[0,6])
     close_pos.append(df.iloc[0,7])
-    display_pos.append("Action : " +  str(df.iloc[0,9]) )
+    display_pos.append("No. of lots : " +  str(df.iloc[0,9]) )
 else : 
     x_neu.append(df.iloc[0,12])
     open_neu.append(df.iloc[0,4])
@@ -131,7 +131,7 @@ def update_output(value,data):
                     increasing_line_color = 'green',
                     decreasing_line_color = 'red',
                     name='candles',
-                    text=display,
+                    #text=display,
                     # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
@@ -193,7 +193,7 @@ def update_output(value,data):
                     increasing_line_color = 'green',
                     decreasing_line_color = 'red',
                     name='candles',
-                    text =display,
+                    #text =display,
                     # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
@@ -268,14 +268,14 @@ def update_output(value,data):
                         high_neg.append(df.iloc[last,5])
                         low_neg.append(df.iloc[last,6])
                         close_neg.append(df.iloc[last,7])
-                        display_neg.append( "Action : " +  str(df.iloc[last,9]) )
+                        display_neg.append( "No. of lots : " +  str(df.iloc[last,9]) )
                     elif df.iloc[last,9] > 0 : 
                         x_pos.append(df.iloc[last,12])
                         open_pos.append(df.iloc[last,4])
                         high_pos.append(df.iloc[last,5])
                         low_pos.append(df.iloc[last,6])
                         close_pos.append(df.iloc[last,7])
-                        display_pos.append( "Action : " +  str(df.iloc[last,9] ) )
+                        display_pos.append( "No. of lots : " +  str(df.iloc[last,9] ) )
                     else : 
                         x_neu.append(df.iloc[last,12])
                         open_neu.append(df.iloc[last,4])
@@ -298,7 +298,7 @@ def update_output(value,data):
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
                             name='candles',
-                            text=display,
+                            #text=display,
                             # hoverinfo="display"
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
@@ -391,7 +391,7 @@ def update_output(value,data):
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
                             name='candles',
-                            text=display,
+                            #text=display,
                             # hoverinfo="display"
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
@@ -467,7 +467,7 @@ def update_output(value,data):
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
                             name='candles',
-                            text=display,
+                            #text=display,
                             # hoverinfo="display"
             )
             candle_pos = plotly.graph_objs.Candlestick(
