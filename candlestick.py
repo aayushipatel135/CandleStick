@@ -76,7 +76,7 @@ app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div([
-    html.H1(children="Candle Stick Plot 2018",
+    html.H1(children="Candle Stick Plot Nifty50 2018",
            style = {'textAlign': 'center','color': 'black'}
     ),
     daq.ToggleSwitch(
@@ -157,7 +157,7 @@ def update_output(value,data):
             scatter = plotly.graph_objs.Scatter(
                 x=list(x),
                 y=list(open),
-                name='normal_graph',
+                name='Nifty 50',
                 mode= 'lines+markers'
             )
             print(x[-1],x[-1])
@@ -215,7 +215,7 @@ def update_output(value,data):
             scatter = plotly.graph_objs.Scatter(
                 x=list(x),
                 y=list(open),
-                name='Scatter',
+                name='Nifty 50',
                 mode= 'lines+markers'
             )
             print(x[-1],x[-1])
@@ -312,7 +312,7 @@ def update_output(value,data):
                     scatter = plotly.graph_objs.Scatter(
                         x=list(x),
                         y=list(open),
-                        name='Scatter',
+                        name='Nifty 50',
                         mode= 'lines+markers'
                     )
                     last = last + 1
@@ -396,7 +396,7 @@ def update_output(value,data):
                     scatter = plotly.graph_objs.Scatter(
                         x=list(x),
                         y=list(open),
-                        name='Scatter',
+                        name='Nifty 50',
                         mode= 'lines+markers'
                     )
                     last = last + 1
@@ -468,7 +468,7 @@ def update_output(value,data):
             scatter = plotly.graph_objs.Scatter(
                     x=list(x),
                     y=list(open),
-                    name='Scatter',
+                    name='Nifty 50',
                     mode= 'lines+markers'
             )
             print(x[-15],x[-1])
