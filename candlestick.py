@@ -22,18 +22,21 @@ open_pos = []
 high_pos = []
 low_pos = []
 close_pos = []
+display_pos = []
 
 x_neg = []
 open_neg = []
 high_neg = []
 low_neg = []
 close_neg = []
+display_neg = []
 
 x_neu = []
 open_neu = []
 high_neu = []
 low_neu = []
 close_neu = []
+display_neu = []
 
 
 if df.iloc[0,9] < 0 :
@@ -42,18 +45,21 @@ if df.iloc[0,9] < 0 :
     high_neg.append(df.iloc[0,5])
     low_neg.append(df.iloc[0,6])
     close_neg.append(df.iloc[0,7])
+    display_neg.append("no. of stocks" +  str(df.iloc[0,9]) )
 elif df.iloc[0,9] > 0 : 
     x_pos.append(df.iloc[0,12])
     open_pos.append(df.iloc[0,4])
     high_pos.append(df.iloc[0,5])
     low_pos.append(df.iloc[0,6])
     close_pos.append(df.iloc[0,7])
+    display_pos.append("no. of stocks" +  str(df.iloc[0,9]) )
 else : 
     x_neu.append(df.iloc[0,12])
     open_neu.append(df.iloc[0,4])
     high_neu.append(df.iloc[0,5])
     low_neu.append(df.iloc[0,6])
     close_neu.append(df.iloc[0,7])
+    display_neu.append("no. of stocks" +  str(df.iloc[0,9]) )
 
 x = []
 x.append(df.iloc[0,12])
@@ -66,7 +72,7 @@ low.append(df.iloc[0,6])
 close = []
 close.append(df.iloc[0,7])
 display = []
-display.append( df.iloc[0,9] )
+display.append( "no. of stocks" +  str(df.iloc[0,9]) )
 last = 0
 
 
@@ -137,6 +143,7 @@ def update_output(value,data):
                     increasing_line_color = 'blue',
                     decreasing_line_color = 'blue',
                     name='selling candle',
+                    text=display_pos,
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -147,6 +154,7 @@ def update_output(value,data):
                     increasing_line_color = 'yellow',
                     decreasing_line_color = 'yellow',
                     name='buying candle',
+                    text=display_neg,
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list([x[0]]),
@@ -197,6 +205,7 @@ def update_output(value,data):
                     increasing_line_color = 'blue',
                     decreasing_line_color = 'blue',
                     name='selling candle',
+                    text=display_pos,
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -207,6 +216,7 @@ def update_output(value,data):
                     increasing_line_color = 'yellow',
                     decreasing_line_color = 'yellow',
                     name='buying candle',
+                    text=display_neg,
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list([x[0]]),
@@ -258,18 +268,21 @@ def update_output(value,data):
                         high_neg.append(df.iloc[last,5])
                         low_neg.append(df.iloc[last,6])
                         close_neg.append(df.iloc[last,7])
+                        display_neg.append("no. of stocks" +  str(df.iloc[last,9]) )
                     elif df.iloc[last,9] > 0 : 
                         x_pos.append(df.iloc[last,12])
                         open_pos.append(df.iloc[last,4])
                         high_pos.append(df.iloc[last,5])
                         low_pos.append(df.iloc[last,6])
                         close_pos.append(df.iloc[last,7])
+                        display_pos.append("no. of stocks" +  str(df.iloc[last,9]) )
                     else : 
                         x_neu.append(df.iloc[last,12])
                         open_neu.append(df.iloc[last,4])
                         high_neu.append(df.iloc[last,5])
                         low_neu.append(df.iloc[last,6])
                         close_neu.append(df.iloc[last,7])
+                        display_neu.append("no. of stocks" +  str(df.iloc[last,9]) )
                     x.append(df.iloc[last,12])
                     open.append(df.iloc[last,4])
                     high.append(df.iloc[last,5])
@@ -297,6 +310,7 @@ def update_output(value,data):
                             increasing_line_color = 'blue',
                             decreasing_line_color = 'blue',
                             name='selling candle',
+                            text=display_pos,
                     )
                     candle_neg = plotly.graph_objs.Candlestick(
                             x = list(x_neg),
@@ -307,6 +321,7 @@ def update_output(value,data):
                             increasing_line_color = 'yellow',
                             decreasing_line_color = 'yellow',
                             name='buying candle',
+                            text=display_neg,
                     )
                     candle_neu = plotly.graph_objs.Candlestick(
                             x = list([x[0]]),
@@ -345,18 +360,21 @@ def update_output(value,data):
                         high_neg.append(df.iloc[last,5])
                         low_neg.append(df.iloc[last,6])
                         close_neg.append(df.iloc[last,7])
+                        display_neg.append("no. of stocks" +  str(df.iloc[last,9]) )
                     elif df.iloc[last,9] > 0 : 
                         x_pos.append(df.iloc[last,12])
                         open_pos.append(df.iloc[last,4])
                         high_pos.append(df.iloc[last,5])
                         low_pos.append(df.iloc[last,6])
                         close_pos.append(df.iloc[last,7])
+                        display_pos.append("no. of stocks" +  str(df.iloc[last,9]) )
                     else : 
                         x_neu.append(df.iloc[last,12])
                         open_neu.append(df.iloc[last,4])
                         high_neu.append(df.iloc[last,5])
                         low_neu.append(df.iloc[last,6])
                         close_neu.append(df.iloc[last,7])
+                        display_neu.append("no. of stocks" +  str(df.iloc[last,9]) )
                     x.append(df.iloc[last,12])
                     open.append(df.iloc[last,4])
                     high.append(df.iloc[last,5])
@@ -385,6 +403,7 @@ def update_output(value,data):
                             increasing_line_color = 'blue',
                             decreasing_line_color = 'blue',
                             name='selling candle',
+                            text=display_pos,
                     )
                     candle_neg = plotly.graph_objs.Candlestick(
                             x = list(x_neg),
@@ -395,6 +414,7 @@ def update_output(value,data):
                             increasing_line_color = 'yellow',
                             decreasing_line_color = 'yellow',
                             name='buying candle',
+                            text=display_neg,
                     )
                     candle_neu = plotly.graph_objs.Candlestick(
                             x = list([x[0]]),
@@ -459,6 +479,7 @@ def update_output(value,data):
                     increasing_line_color = 'blue',
                     decreasing_line_color = 'blue',
                     name='selling candle',
+                    text=display_pos, 
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -469,6 +490,7 @@ def update_output(value,data):
                     increasing_line_color = 'yellow',
                     decreasing_line_color = 'yellow',
                     name='buying candle',
+                    text=display_neg,
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list([x[0]]),
