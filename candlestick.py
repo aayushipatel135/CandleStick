@@ -121,7 +121,7 @@ def update_output(value,data):
                     open = list(open),
                     increasing_line_color = 'green',
                     decreasing_line_color = 'red',
-                    name='normal_graph',
+                    name='candles',
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -131,7 +131,7 @@ def update_output(value,data):
                     open = list(open_pos),
                     increasing_line_color = 'blue',
                     decreasing_line_color = 'blue',
-                    name='normal_graph',
+                    name='selling candle',
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -141,7 +141,7 @@ def update_output(value,data):
                     open = list(open_neg),
                     increasing_line_color = 'yellow',
                     decreasing_line_color = 'yellow',
-                    name='normal_graph',
+                    name='buying candle',
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list(x_neu),
@@ -179,7 +179,7 @@ def update_output(value,data):
                     open = list(open),
                     increasing_line_color = 'green',
                     decreasing_line_color = 'red',
-                    name='normal_graph',
+                    name='candles',
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -189,7 +189,7 @@ def update_output(value,data):
                     open = list(open_pos),
                     increasing_line_color = 'blue',
                     decreasing_line_color = 'blue',
-                    name='normal_graph',
+                    name='selling candle',
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -199,7 +199,7 @@ def update_output(value,data):
                     open = list(open_neg),
                     increasing_line_color = 'yellow',
                     decreasing_line_color = 'yellow',
-                    name='normal_graph',
+                    name='buying candle',
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list(x_neu),
@@ -264,7 +264,7 @@ def update_output(value,data):
                             open = list(open),
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
-                            name='normal_graph',
+                            name='candles',
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
                             x = list(x_pos),
@@ -274,7 +274,7 @@ def update_output(value,data):
                             open = list(open_pos),
                             increasing_line_color = 'blue',
                             decreasing_line_color = 'blue',
-                            name='normal_graph',
+                            name='selling candle',
                     )
                     candle_neg = plotly.graph_objs.Candlestick(
                             x = list(x_neg),
@@ -284,7 +284,7 @@ def update_output(value,data):
                             open = list(open_neg),
                             increasing_line_color = 'yellow',
                             decreasing_line_color = 'yellow',
-                            name='normal_graph',
+                            name='buying candle',
                     )
                     candle_neu = plotly.graph_objs.Candlestick(
                             x = list(x_neu),
@@ -348,7 +348,7 @@ def update_output(value,data):
                             open = list(open),
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
-                            name='normal_graph',
+                            name='candles',
                     )
                     candle_pos = plotly.graph_objs.Candlestick(
                             x = list(x_pos),
@@ -358,7 +358,7 @@ def update_output(value,data):
                             open = list(open_pos),
                             increasing_line_color = 'blue',
                             decreasing_line_color = 'blue',
-                            name='normal_graph',
+                            name='selling candle',
                     )
                     candle_neg = plotly.graph_objs.Candlestick(
                             x = list(x_neg),
@@ -368,7 +368,7 @@ def update_output(value,data):
                             open = list(open_neg),
                             increasing_line_color = 'yellow',
                             decreasing_line_color = 'yellow',
-                            name='normal_graph',
+                            name='buying candle',
                     )
                     candle_neu = plotly.graph_objs.Candlestick(
                             x = list(x_neu),
@@ -408,7 +408,7 @@ def update_output(value,data):
                             open = list(open),
                             increasing_line_color = 'green',
                             decreasing_line_color = 'red',
-                            name='normal_graph',
+                            name='candles',
             )
             candle_pos = plotly.graph_objs.Candlestick(
                     x = list(x_pos),
@@ -418,7 +418,7 @@ def update_output(value,data):
                     open = list(open_pos),
                     increasing_line_color = 'blue',
                     decreasing_line_color = 'blue',
-                    name='normal_graph',
+                    name='selling candle',
             )
             candle_neg = plotly.graph_objs.Candlestick(
                     x = list(x_neg),
@@ -428,7 +428,7 @@ def update_output(value,data):
                     open = list(open_neg),
                     increasing_line_color = 'yellow',
                     decreasing_line_color = 'yellow',
-                    name='normal_graph',
+                    name='buying candle',
             )
             candle_neu = plotly.graph_objs.Candlestick(
                     x = list(x_neu),
