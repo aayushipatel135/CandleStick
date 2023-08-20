@@ -210,7 +210,7 @@ def update_output(value,data):
                     open = list([open[0]]),
                     increasing_line_color = 'blue',
                     decreasing_line_color = 'blue',
-                    name='buying candle',
+                    name='selling candle',
             )
             scatter = plotly.graph_objs.Scatter(
                 x=list(x),
@@ -307,7 +307,7 @@ def update_output(value,data):
                             open = list([open[0]]),
                             increasing_line_color = 'blue',
                             decreasing_line_color = 'blue',
-                            name='buying candle',
+                            name='selling candle',
                     )
                     scatter = plotly.graph_objs.Scatter(
                         x=list(x),
@@ -391,7 +391,7 @@ def update_output(value,data):
                             open = list([open[0]]),
                             increasing_line_color = 'blue',
                             decreasing_line_color = 'blue',
-                            name='buying candle',
+                            name='selling candle',
                     )
                     scatter = plotly.graph_objs.Scatter(
                         x=list(x),
@@ -463,7 +463,7 @@ def update_output(value,data):
                     open = list([open[0]]),
                     increasing_line_color = 'blue',
                     decreasing_line_color = 'blue',
-                    name='buying candle',
+                    name='selling candle',
             )
             scatter = plotly.graph_objs.Scatter(
                     x=list(x),
