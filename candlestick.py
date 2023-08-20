@@ -13,9 +13,15 @@ from flask import request
 
 
 df = pd.read_csv('final.csv')
-df = df.iloc[88992:,:]
+df1 = pd.read_csv('EOC.csv')
 df['date'] = df['Date'] + " " +  df['Time'] + ":00+05:30"
 df['Actions'] = df['Actions'].apply(lambda x : int(x[1:-1]))
+df['EOC'] = df1['EOC']
+df = df.iloc[88992:,:]
+
+initial_balance = df.iloc[0,8]
+return_x = [0]
+return_y = [0]
 
 x_pos = []
 open_pos = []
@@ -109,8 +115,8 @@ app.layout = html.Div([
 
 @app.callback(
     [Output('toggle-switch-output', 'children'),
-     Output('live-table', 'figure'),
-     Output('live-graph', 'figure')],
+     Output('live-table', 'data_tableure'),
+     Output('live-graph', 'data_tableure')],
     [Input('my-toggle-switch', 'value'),
      Input('graph-update', 'n_intervals')])
 
@@ -121,17 +127,12 @@ def update_output(value,data):
 
     string1 = ''
     string2 = ''
+    data_table=[go.Table(
+                    header=dict(values=['Month', 'Return']),
+                    cells=dict(values=[ return_x[-1] ,  return_y[-1] ] ) 
+            )]
 
     if value==False:
-        fig = go.Figure(data=[go.Table(
-                header=dict(values=['A', 'B']),
-                cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ] ) 
-        )])
-        fig.update_layout(
-            autosize=False,
-            width=800,
-            height=400
-        )
         time_interval = 9999999999999900000
         time.sleep(60)
         if last < 30 :
@@ -186,7 +187,7 @@ def update_output(value,data):
                 mode= 'lines+markers'
             )
             print(x[-1],x[-1])
-            return (string1,fig,
+            return (string1,data_table,
                     {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                         xaxis = dict(
@@ -249,7 +250,7 @@ def update_output(value,data):
             )
             print(x[-1],x[-1])
             if last < 52 : 
-                return (string1,fig,
+                return (string1,data_table,
                         {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
@@ -260,7 +261,7 @@ def update_output(value,data):
                         )}
                        )
             else : 
-                return (string1,fig,
+                return (string1,data_table,
                         {'data': [candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
@@ -272,16 +273,16 @@ def update_output(value,data):
                        )
     else:
         time_interval = 1500
-        fig = go.Figure(data=[go.Table(
-                columnwidth = [40,40],
-                header=dict(values=['A', 'B']),
-                cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ]   )
-        )])
-        fig.update_layout(
-            autosize=False,
-            width=800,
-            height=400
-        )
+        if df.iloc[last,14] == True : 
+            temp = df.iloc[0,2]
+            final_balance = df.iloc[last,8]
+            y = ((final_balance - initial_balance) / initial_balance) * 100
+            return_x.append(temp[5:7])
+            return_y.append(y)
+            data_table=[go.Table(
+                    header=dict(values=['Month', 'Return']),
+                    cells=dict(values=[ return_x[-1] ,  return_y[-1] ] ) 
+            )]
         if last < len(df) : 
                 if last < 30 : 
                     print(display[last])
@@ -364,7 +365,7 @@ def update_output(value,data):
                     )
                     last = last + 1
                     print(x[0] ,x[-1])
-                    return (string2,fig,
+                    return (string2,data_table,
                             {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                             'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                 xaxis = dict(
@@ -458,7 +459,7 @@ def update_output(value,data):
                     last = last + 1
                     print(x[-15],x[-1])
                     if last < 52 : 
-                        return (string2,fig,
+                        return (string2,data_table,
                                 {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                                 'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                     xaxis = dict(
@@ -470,7 +471,7 @@ def update_output(value,data):
                                 
                                )
                     else :
-                        return (string1,fig,
+                        return (string1,data_table,
                         {'data': [candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
@@ -533,7 +534,7 @@ def update_output(value,data):
             )
             print(x[-15],x[-1])
             time.sleep(60)
-            return (string2,fig,
+            return (string2,data_table,
                     {'data': [candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                 xaxis = dict(autorange=False,
@@ -542,7 +543,7 @@ def update_output(value,data):
                                             yaxis = dict(range = [min(low),max(high)]),
                     )}
             )
-        #return (string2,fig2)
+        #return (string2,data_table2)
 
 
 if __name__ == '__main__':
