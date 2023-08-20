@@ -16,7 +16,6 @@ df = pd.read_csv('final.csv')
 df = df.iloc[88992:,:]
 df['date'] = df['Date'] + " " +  df['Time'] + ":00+05:30"
 df['Actions'] = df['Actions'].apply(lambda x : int(x[1:-1]))
-df['display'] = "Date : " + str(df['Date']) + "\n" + "Time : " + str(df['Time'])  + "\n" +  "Open : "  + str(df['Open']) + "\n" + "High : " + str(df['High']) + "\n"  + "Low : " + str(df['Low']) + "\n" + "Close : " + str(df['Close']) + "\n" + "no.of stocks : " + str(df['Actions'])
 
 x_pos = []
 open_pos = []
@@ -67,7 +66,7 @@ low.append(df.iloc[0,6])
 close = []
 close.append(df.iloc[0,7])
 display = []
-display.append( df.iloc[0,13] )
+display.append( df.iloc[0,9] )
 last = 0
 
 
@@ -276,7 +275,7 @@ def update_output(value,data):
                     high.append(df.iloc[last,5])
                     low.append(df.iloc[last,6])
                     close.append(df.iloc[last,7])
-                    display.append( df.iloc[last,13]  )
+                    display.append( df.iloc[last,9]  )
             
                     candle = plotly.graph_objs.Candlestick(x = list(x),
                             low = list(low),
@@ -363,7 +362,7 @@ def update_output(value,data):
                     high.append(df.iloc[last,5])
                     low.append(df.iloc[last,6])
                     close.append(df.iloc[last,7])
-                    display.append( df.iloc[last,13]  )
+                    display.append( df.iloc[last,9]  )
                     
                     candle = plotly.graph_objs.Candlestick(
                             x = list(x),
