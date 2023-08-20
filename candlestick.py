@@ -93,6 +93,11 @@ app.layout = html.Div([
     ),
     html.Div(id='toggle-switch-output'),
 
+    dcc.Graph(id='live-table', 
+              style={'height': '85vh'
+                    },
+              animate=False),
+
     dcc.Graph(id='live-graph', 
               style={'height': '85vh'
                     },
@@ -106,6 +111,7 @@ app.layout = html.Div([
 
 @app.callback(
     [Output('toggle-switch-output', 'children'),
+     Output('live-table', 'figure'),
      Output('live-graph', 'figure')],
     [Input('my-toggle-switch', 'value'),
      Input('graph-update', 'n_intervals')])
@@ -119,6 +125,10 @@ def update_output(value,data):
     string2 = ''
 
     if value==False:
+        fig = go.Figure(data=[go.Table(
+                header=dict(values=['A', 'B']),
+                cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ]))
+        ])
         time_interval = 9999999999999900000
         time.sleep(60)
         if last < 30 :
@@ -173,7 +183,7 @@ def update_output(value,data):
                 mode= 'lines+markers'
             )
             print(x[-1],x[-1])
-            return (string1,
+            return (string1,fig,
                     {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                         xaxis = dict(
@@ -236,7 +246,7 @@ def update_output(value,data):
             )
             print(x[-1],x[-1])
             if last < 52 : 
-                return (string1,
+                return (string1,fig,
                         {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
@@ -247,7 +257,7 @@ def update_output(value,data):
                         )}
                        )
             else : 
-                return (string1,
+                return (string1,fig,
                         {'data': [candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
@@ -259,6 +269,10 @@ def update_output(value,data):
                        )
     else:
         time_interval = 1500
+        fig = go.Figure(data=[go.Table(
+                header=dict(values=['A', 'B']),
+                cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ]))
+        ])
         if last < len(df) : 
                 if last < 30 : 
                     print(display[last])
@@ -341,7 +355,7 @@ def update_output(value,data):
                     )
                     last = last + 1
                     print(x[0] ,x[-1])
-                    return (string2, 
+                    return (string2,fig,
                             {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                             'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                 xaxis = dict(
@@ -435,7 +449,7 @@ def update_output(value,data):
                     last = last + 1
                     print(x[-15],x[-1])
                     if last < 52 : 
-                        return (string2,
+                        return (string2,fig,
                                 {'data': [candle_neu,candle,candle_pos,candle_neg,scatter],
                                 'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                                     xaxis = dict(
@@ -510,7 +524,7 @@ def update_output(value,data):
             )
             print(x[-15],x[-1])
             time.sleep(60)
-            return (string2,
+            return (string2,fig,
                     {'data': [candle,candle_pos,candle_neg,scatter],
                     'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                 xaxis = dict(autorange=False,
