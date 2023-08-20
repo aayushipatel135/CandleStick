@@ -94,7 +94,7 @@ app.layout = html.Div([
     html.Div(id='toggle-switch-output'),
 
     dcc.Graph(id='live-table', 
-              style={'height': '85vh'
+              style={'height': '10vh'
                     },
               animate=False),
 
