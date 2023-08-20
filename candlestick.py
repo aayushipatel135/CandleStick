@@ -124,9 +124,10 @@ def update_output(value,data):
 
     if value==False:
         fig = go.Figure(data=[go.Table(
-                header=dict(values=['A', 'B']),
-                cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ]))
-        ])
+                columnwidth = [40,100],
+                header=dict(values=['A', 'B'],height=20),
+                cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ], height=20  ) 
+        )])
         time_interval = 9999999999999900000
         time.sleep(60)
         if last < 30 :
@@ -268,9 +269,10 @@ def update_output(value,data):
     else:
         time_interval = 1500
         fig = go.Figure(data=[go.Table(
-                header=dict(values=['A', 'B']),
-                cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ]))
-        ])
+                columnwidth = [40,100],
+                header=dict(values=['A', 'B'],height=20),
+                cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ]  ,  height=20 )
+        )])
         if last < len(df) : 
                 if last < 30 : 
                     print(display[last])
