@@ -463,7 +463,7 @@ def update_output(value,data):
                                 
                                )
                     else :
-                        return (string1,
+                        return (string1,fig,
                         {'data': [candle,candle_pos,candle_neg,scatter],
                         'layout' : go.Layout(xaxis_rangeslider_visible=True,
                                             xaxis = dict(
