@@ -94,6 +94,8 @@ app.layout = html.Div([
     html.Div(id='toggle-switch-output'),
 
     dcc.Graph(id='live-table', 
+              style={'height': '40vh'
+                    },
               animate=False),
 
     dcc.Graph(id='live-graph', 
@@ -124,7 +126,7 @@ def update_output(value,data):
 
     if value==False:
         fig = go.Figure(data=[go.Table(
-                columnwidth = [40,100],
+                columnwidth = [40,40],
                 header=dict(values=['A', 'B'],height=20),
                 cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ], height=20  ) 
         )])
@@ -269,7 +271,7 @@ def update_output(value,data):
     else:
         time_interval = 1500
         fig = go.Figure(data=[go.Table(
-                columnwidth = [40,100],
+                columnwidth = [40,40],
                 header=dict(values=['A', 'B'],height=20),
                 cells=dict(values=[ df.iloc[last:last+2,0 ] ,  df.iloc[last:last+2,1 ]   ]  ,  height=20 )
         )])
