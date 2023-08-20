@@ -115,8 +115,8 @@ app.layout = html.Div([
 
 @app.callback(
     [Output('toggle-switch-output', 'children'),
-     Output('live-table', '{ 'data' : data_table }ure'),
-     Output('live-graph', '{ 'data' : data_table }ure')],
+     Output('live-table', 'figure'),
+     Output('live-graph', 'figure')],
     [Input('my-toggle-switch', 'value'),
      Input('graph-update', 'n_intervals')])
 
