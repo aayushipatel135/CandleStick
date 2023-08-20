@@ -16,6 +16,7 @@ df = pd.read_csv('final.csv')
 df = df.iloc[88992:,:]
 df['date'] = df['Date'] + " " +  df['Time'] + ":00+05:30"
 df['Actions'] = df['Actions'].apply(lambda x : int(x[1:-1]))
+df['display'] = "Date : " + str(df['Date']) + "\n" + "Time : " + str(df['Time'])  + "\n" +  "Open : "  + str(df['Open']) + "\n" + "High : " + str(df['High']) + "\n"  + "Low : " + str(df['Low']) + "\n" + "Close : " + str(df['Close']) + "\n" + "no.of stocks : " + str(df['Actions'])
 
 x_pos = []
 open_pos = []
@@ -37,26 +38,26 @@ close_neu = []
 
 
 if df.iloc[0,9] < 0 :
-    x_neg.append(df.iloc[0,-1])
+    x_neg.append(df.iloc[0,12])
     open_neg.append(df.iloc[0,4])
     high_neg.append(df.iloc[0,5])
     low_neg.append(df.iloc[0,6])
     close_neg.append(df.iloc[0,7])
 elif df.iloc[0,9] > 0 : 
-    x_pos.append(df.iloc[0,-1])
+    x_pos.append(df.iloc[0,12])
     open_pos.append(df.iloc[0,4])
     high_pos.append(df.iloc[0,5])
     low_pos.append(df.iloc[0,6])
     close_pos.append(df.iloc[0,7])
 else : 
-    x_neu.append(df.iloc[0,-1])
+    x_neu.append(df.iloc[0,12])
     open_neu.append(df.iloc[0,4])
     high_neu.append(df.iloc[0,5])
     low_neu.append(df.iloc[0,6])
     close_neu.append(df.iloc[0,7])
 
 x = []
-x.append(df.iloc[0,-1])
+x.append(df.iloc[0,12])
 open = []
 open.append(df.iloc[0,4])
 high = []
@@ -66,7 +67,7 @@ low.append(df.iloc[0,6])
 close = []
 close.append(df.iloc[0,7])
 display = []
-display.append( "Date : "+ str(df.iloc[0,-1]) +  "\n" + "Open : "+ str(df.iloc[0,4]) + "\n" + "high" + str(df.iloc[0,5]) + "\n" + "low" + str(df.iloc[0,6]) + "\n" + "close" + str(df.iloc[0,7]) + "\n" +  "no. of stocks" + str(df.iloc[0,9]) )
+display.append( df.iloc[0,13] )
 last = 0
 
 
@@ -253,29 +254,29 @@ def update_output(value,data):
                 if last < 30 : 
                     print(display[last])
                     if df.iloc[last,9] < 0 :
-                        x_neg.append(df.iloc[last,-1])
+                        x_neg.append(df.iloc[last,12])
                         open_neg.append(df.iloc[last,4])
                         high_neg.append(df.iloc[last,5])
                         low_neg.append(df.iloc[last,6])
                         close_neg.append(df.iloc[last,7])
                     elif df.iloc[last,9] > 0 : 
-                        x_pos.append(df.iloc[last,-1])
+                        x_pos.append(df.iloc[last,12])
                         open_pos.append(df.iloc[last,4])
                         high_pos.append(df.iloc[last,5])
                         low_pos.append(df.iloc[last,6])
                         close_pos.append(df.iloc[last,7])
                     else : 
-                        x_neu.append(df.iloc[last,-1])
+                        x_neu.append(df.iloc[last,12])
                         open_neu.append(df.iloc[last,4])
                         high_neu.append(df.iloc[last,5])
                         low_neu.append(df.iloc[last,6])
                         close_neu.append(df.iloc[last,7])
-                    x.append(df.iloc[last,-1])
+                    x.append(df.iloc[last,12])
                     open.append(df.iloc[last,4])
                     high.append(df.iloc[last,5])
                     low.append(df.iloc[last,6])
                     close.append(df.iloc[last,7])
-                    display.append( "Date : "+ str(df.iloc[last,-1]) +  "\n" + "Open : "+ str(df.iloc[last,4]) + "\n" + "high : " + str(df.iloc[last,5]) + "\n" + "low : " + str(df.iloc[last,6]) + "\n" + "close : " + str(df.iloc[last,7]) + "\n" +  "no. of stocks : " + str(df.iloc[last,9])  )
+                    display.append( df.iloc[last,13]  )
             
                     candle = plotly.graph_objs.Candlestick(x = list(x),
                             low = list(low),
@@ -340,29 +341,29 @@ def update_output(value,data):
                 else : 
                     print(display[last])
                     if df.iloc[last,9] < 0 :
-                        x_neg.append(df.iloc[last,-1])
+                        x_neg.append(df.iloc[last,12])
                         open_neg.append(df.iloc[last,4])
                         high_neg.append(df.iloc[last,5])
                         low_neg.append(df.iloc[last,6])
                         close_neg.append(df.iloc[last,7])
                     elif df.iloc[last,9] > 0 : 
-                        x_pos.append(df.iloc[last,-1])
+                        x_pos.append(df.iloc[last,12])
                         open_pos.append(df.iloc[last,4])
                         high_pos.append(df.iloc[last,5])
                         low_pos.append(df.iloc[last,6])
                         close_pos.append(df.iloc[last,7])
                     else : 
-                        x_neu.append(df.iloc[last,-1])
+                        x_neu.append(df.iloc[last,12])
                         open_neu.append(df.iloc[last,4])
                         high_neu.append(df.iloc[last,5])
                         low_neu.append(df.iloc[last,6])
                         close_neu.append(df.iloc[last,7])
-                    x.append(df.iloc[last,-1])
+                    x.append(df.iloc[last,12])
                     open.append(df.iloc[last,4])
                     high.append(df.iloc[last,5])
                     low.append(df.iloc[last,6])
                     close.append(df.iloc[last,7])
-                    display.append(  "Date : "+ str(df.iloc[last,-1]) +  "\n" + "Open : "+ str(df.iloc[last,4]) + "\n" + "high : " + str(df.iloc[last,5]) + "\n" + "low : " + str(df.iloc[last,6]) + "\n" + "close : " + str(df.iloc[last,7]) + "\n" +  "no. of stocks : " + str(df.iloc[last,9])   )
+                    display.append( df.iloc[last,13]  )
                     
                     candle = plotly.graph_objs.Candlestick(
                             x = list(x),
