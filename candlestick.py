@@ -124,7 +124,7 @@ def update_output(value,data):
     global last
     global time_interval
 
-
+    print(df.iloc[0,14])
     string1 = ''
     string2 = ''
     data_table=[go.Table(
