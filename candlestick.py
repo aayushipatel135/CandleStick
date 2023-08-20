@@ -125,8 +125,8 @@ def update_output(value,data):
     global time_interval
 
     # print(df.iloc[0,13])
-    # string1 = ''
-    # string2 = ''
+    string1 = ''
+    string2 = ''
     # data_table =[go.Table(
     #                 header=dict(values=['Month', 'Return']),
     #                 cells=dict(values=[ return_x[-1] ,  return_y[-1] ] ) 
